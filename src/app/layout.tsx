@@ -33,7 +33,7 @@ export default function RootLayout({
          <div className="min-h-screen bg-[#181B1B] flex flex-col">
         
           <div className="flex flex-1">
-            <Sidebar open={sideBarOpen} />
+            <Sidebar  />
             <main className="flex-1 p-4 lg:p-8 ml-0 lg:ml-64 transition-all duration-300">
               {children}
             </main>
