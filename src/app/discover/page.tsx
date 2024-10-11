@@ -4,6 +4,8 @@ import { Star, Cog, DollarSign, Palette, Award, Tv, Earth } from "lucide-react";
 import InterestSelector from "@/components/aside";
 import Link from "next/link";
 
+import Image from "next/image";
+
 const DiscoverPage = () => {
   const [selectedInterests, setSelectedInterests] = useState([]);
 
@@ -56,17 +58,25 @@ const DiscoverPage = () => {
         <div className="flex-grow">
           {/* Featured Article */}
           <div className="bg-gray-800 rounded-lg overflow-hidden mb-4">
-            <img
-              src="https://via.placeholder.com/600x300"
+            <Image
+              src="/image/tesla.jpg"
+              width={80}
+              height={30}
               alt="Featured article"
               className="w-full h-48 object-cover"
             />
             {/* Redirect to dynamic article page */}
             <Link href={`/page/${articles[0].id}`}>
               <div className="p-4 cursor-pointer">
-                <h3 className="font-bold mb-1">{articles[0].title}</h3>
+                <h3 className="font-bold mb-1">Tesla Unveiled Cybercab</h3>
                 <p className="text-sm text-gray-400">
-                  {articles[0].description}
+                  esla has unveiled its highly anticipated Cybercab robotaxi,
+                  showcasing a fleet of 20 sleek, autonomous vehicles at the
+                  "We, Robot" event held at Warner Bros. Discovery studio. As
+                  reported by TechCrunch, the Cybercab features a design
+                  reminiscent of a smaller Cybertruck, complete with suicide
+                  doors and no steering wheel or pedals, signaling Tesla's bold
+                  step towards a fully autonomous future.
                 </p>
               </div>
             </Link>
@@ -80,16 +90,22 @@ const DiscoverPage = () => {
                 className="bg-gray-800 rounded-lg overflow-hidden"
               >
                 <img
-                  src="https://via.placeholder.com/400x200"
+                  src="/image/nasa.jpg"
                   alt={article.title}
                   className="w-full h-32 object-cover"
                 />
                 {/* Redirect to dynamic article page */}
                 <Link href={`/page/${article.id}`}>
                   <div className="p-4 cursor-pointer">
-                    <h3 className="font-bold mb-1">{article.title}</h3>
+                    <h3 className="font-bold mb-1">
+                      World-First Ovarian Cancer Vaccine
+                    </h3>
                     <p className="text-sm text-gray-400">
-                      {article.description}
+                      According to reports from the University of Oxford,
+                      researchers are developing the world's first vaccine to
+                      prevent ovarian cancer, called OvarianVax, which aims to
+                      teach the immune system to recognize and attack
+                      early-stage cancer cells.
                     </p>
                   </div>
                 </Link>

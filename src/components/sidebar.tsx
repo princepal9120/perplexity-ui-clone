@@ -2,12 +2,15 @@ import React from "react";
 import { usePathname } from "next/navigation";
 import {
   ArrowDown,
+  ArrowLeftToLine,
   ArrowUpRight,
   Download,
   Earth,
   Home,
   Library,
   LogIn,
+  LogInIcon,
+  LogOut,
   Settings,
   VenetianMask,
 } from "lucide-react";
@@ -19,6 +22,7 @@ import {
   TwitterLogoIcon,
 } from "@radix-ui/react-icons";
 import Image from "next/image";
+import { Input } from "./ui/input";
 
 const sidebarItems = [
   { href: "/", label: "Home", icon: Home },
@@ -29,9 +33,10 @@ const sidebarItems = [
 
 interface SidebarProps {
   open: boolean;
+  onMenuClick: () => void;
 }
 
-export default function Sidebar() {
+export default function Sidebar({open, onMenuClick}: SidebarProps) {
   const pathname = usePathname();
 
   return (
@@ -42,11 +47,19 @@ export default function Sidebar() {
         } lg:translate-x-0`}
     >
       <nav className="h-full flex flex-col">
-        <div className="p-4 border-b border-gray-200">
-          <div>
-          {/* <Image src="../../public/image/image.png" alt="Logo" width={150} height={150} /> */}
-          </div>
-        </div>
+      <div className="flex justify-between items-center p-2 border-b border-gray-200">
+      <div className="m-0auto h-auto object-contain">
+        <Image src="/image/image.png" alt="Logo" width={350} height={30} />
+      </div>
+   
+<Button 
+onClick={onMenuClick}
+>      <ArrowLeftToLine osize={28} className="ml-1 text-white"/></Button>
+
+    </div>
+    <div>
+      
+    </div>
         <div className="flex-grow overflow-y-auto">
           <div className="px-3 py-4">
             {sidebarItems.map((item) => (
@@ -66,12 +79,12 @@ export default function Sidebar() {
             ))}
           </div>
           <div className="flex border border-dotted my-1 mx-3">           
-            <div className="flex items-center text-clip justify-center m-7">
-            <p className="text-sm text-gray-500 mb-6 
+            
+            <p className="flex text-sm text-gray-500 mb-6 text-center
             ">
               Library disabled while incognito
             </p>
-            </div>
+       
           </div>{" "}
         </div>
         <div className="bg-transparent p-4 rounded-lg mb-6">
@@ -79,7 +92,7 @@ export default function Sidebar() {
           <p className="text-sm text-gray-600 mb-2">
             Upgrade for image upload, smarter AI, and more Pro Search.
           </p>
-        <div className="border border-bg-bg-gray-900">
+        <div className="">
         <a href="#" className="text-white flex items-center text-sm ">
         <ArrowUpRight size={14} className="mr-1" />
             Learn More
