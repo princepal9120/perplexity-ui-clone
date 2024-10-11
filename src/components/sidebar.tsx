@@ -48,13 +48,14 @@ export default function Sidebar({open, onMenuClick}: SidebarProps) {
     >
       <nav className="h-full flex flex-col">
       <div className="flex justify-between items-center p-2 border-b border-gray-200">
-      <div className="m-0auto h-auto object-contain">
+      <div className="m-auto h-auto object-contain">
         <Image src="/image/image.png" alt="Logo" width={350} height={30} />
       </div>
    
 <Button 
+className="bg-transparent"
 onClick={onMenuClick}
->      <ArrowLeftToLine osize={28} className="ml-1 text-white"/></Button>
+>      <ArrowLeftToLine size={28} className="ml-3 text-white"/></Button>
 
     </div>
     <div>
