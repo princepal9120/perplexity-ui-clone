@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { Star, Cog, DollarSign, Palette, Award, Tv, Earth } from "lucide-react";
 import InterestSelector from "@/components/aside";
 import Link from "next/link";
@@ -7,16 +7,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 const DiscoverPage = () => {
-  const [selectedInterests, setSelectedInterests] = useState([]);
-
-  const toggleInterest = (interest) => {
-    setSelectedInterests((prev) =>
-      prev.includes(interest)
-        ? prev.filter((i) => i !== interest)
-        : [...prev, interest]
-    );
-  };
-
   const articles = [
     { id: 1, title: "Featured Article", description: "Brief Description" },
     { id: 2, title: "Tech News", description: "Latest updates in tech..." },
@@ -72,10 +62,10 @@ const DiscoverPage = () => {
                 <p className="text-sm text-gray-400">
                   esla has unveiled its highly anticipated Cybercab robotaxi,
                   showcasing a fleet of 20 sleek, autonomous vehicles at the
-                  "We, Robot" event held at Warner Bros. Discovery studio. As
+                  &ldquo;We, Robot&rdquo; event held at Warner Bros. Discovery studio. As
                   reported by TechCrunch, the Cybercab features a design
                   reminiscent of a smaller Cybertruck, complete with suicide
-                  doors and no steering wheel or pedals, signaling Tesla's bold
+                  doors and no steering wheel or pedals, signaling Tesla&apos;s bold
                   step towards a fully autonomous future.
                 </p>
               </div>
@@ -102,7 +92,7 @@ const DiscoverPage = () => {
                     </h3>
                     <p className="text-sm text-gray-400">
                       According to reports from the University of Oxford,
-                      researchers are developing the world's first vaccine to
+                      researchers are developing the world&apos;s first vaccine to
                       prevent ovarian cancer, called OvarianVax, which aims to
                       teach the immune system to recognize and attack
                       early-stage cancer cells.

@@ -1,5 +1,5 @@
 "use client"
-import type { Metadata } from "next";
+
 import localFont from "next/font/local";
 import "./globals.css";
 import { useState } from "react";
@@ -33,7 +33,7 @@ export default function RootLayout({
          <div className="min-h-screen bg-[#181B1B] flex flex-col">
         
           <div className="flex flex-1">
-            <Sidebar   onMenuClick={() => setSideBarOpen(!sideBarOpen)}   />
+            <Sidebar   onMenuClick={() => setSideBarOpen(!sideBarOpen)} open={sideBarOpen}  />
             <main className="flex-1 p-4 lg:p-8 ml-0 lg:ml-64 transition-all duration-300">
               {children}
             </main>
