@@ -48,10 +48,10 @@ const DiscoverPage = () => {
         <div className="flex-grow">
           {/* Featured Article */}
           <div className="bg-gray-800 rounded-lg overflow-hidden mb-4">
-            <Image
+            <img
               src="/image/tesla.jpg"
-              width={80}
-              height={30}
+              // width={80}
+              // height={32}
               alt="Featured article"
               className="w-full h-48 object-cover"
             />
@@ -82,6 +82,9 @@ const DiscoverPage = () => {
                 <img
                   src="/image/nasa.jpg"
                   alt={article.title}
+                  height={32}
+                  width={50}
+
                   className="w-full h-32 object-cover"
                 />
                 {/* Redirect to dynamic article page */}
